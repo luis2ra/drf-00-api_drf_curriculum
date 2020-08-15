@@ -1,0 +1,20 @@
+# Estos son los requerimientos definidos en el link:
+# https://cosasdedevs.com/posts/como-crear-una-api-completa-con-django-rest-framework/
+
+# django<3
+# Markdown==3.1.1
+# django-filter==2.0.0
+# djangorestframework==3.9.4
+# psycopg2>=2.7,<3.0
+# django-ckeditor==5.9.0
+# Pillow==7.1.2
+
+
+# Estos son los aplicados en el momento de la Practica (2020-08-15):
+Django==2.2.10
+Markdown==3.1.1
+django-filter==2.2.0
+djangorestframework==3.11.0
+psycopg2==2.8.4
+django-ckeditor==5.7.1
+Pillow==7.1.2
