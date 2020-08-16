@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'experiences',
     'projects',
     'extras',
+    'search',
 ]
 
 MIDDLEWARE = [
