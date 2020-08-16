@@ -134,3 +134,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'users.User'
+
+'''
+DEFAULT_RENDERER_CLASSES: define el tipo de respuesta que daremos al usuario, 
+nosotros devolveremos un Json y se pueden añadir más tipos al listado.
+
+DEFAULT_AUTHENTICATION_CLASSES:  definimos el tipo de autenticación, como vimos 
+en el tutorial anterior, nosotros utilizaremos la autenticación por Token.
+
+DEFAULT_PAGINATION_CLASS: selección del paginador a ser utilizado.
+
+PAGE_SIZE: número máximo de resultados por página.
+
+'''
+
+# Django REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10,
+}
