@@ -14,12 +14,12 @@ import os
 import environ
 
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
-# reading .env file
-environ.Env.read_env()
+# env = environ.Env(
+#     # set casting, default value
+#     DEBUG=(bool, True)
+# )
+# # reading .env file
+# environ.Env.read_env()
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'projects',
     'extras',
     'search',
+    'profiles',
 ]
 
 MIDDLEWARE = [
