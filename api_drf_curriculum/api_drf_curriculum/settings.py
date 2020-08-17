@@ -14,10 +14,8 @@ import os
 import environ
 
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
+env = environ.Env()
+
 # reading .env file
 environ.Env.read_env()
 
@@ -25,20 +23,13 @@ environ.Env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = env.str('SECRET_KEY')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-#SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY=')(c+ojw9q2-7nme!(m+xui78jk@d@jeurlgm##40w&7h#ixglv'
-# DEBUG = os.environ['DEBUG']
-DEBUG=True
+DEBUG = env.bool('DEBUG')
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -92,14 +83,7 @@ WSGI_APPLICATION = 'api_drf_curriculum.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE'    : 'django.db.backends.postgresql',
-        'NAME'      : 'CURRICULUM',
-        'USER'      : 'admin',
-        'PASSWORD'  : 'password123',
-        'HOST'      : '127.0.0.1',
-        'PORT'      : '5432',
-    }
+    'default': env.db_url('DATABASE_URL')
 }
 
 # Password validation
