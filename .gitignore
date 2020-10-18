@@ -3,4 +3,5 @@
 *.pot
 *.pyc
 .envs
+.env
 media/
